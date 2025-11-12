@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>BLACK METAL</title>
+      <style>
+        body, html {
+         color: #ffffff; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo2.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: rgb(255, 255, 255);
+         text-shadow: 0 0 30px hsl(0, 0%, 75%);
+        }
+        h2 {
+          color: rgb(252, 252, 252);
+        }
+        /* GIF centrado y con animación tipo "grow" */
+.imagen-interna {
+  display: block;
+  margin: 30px auto;        /* mantiene el centrado */
+  width: 350px;             /* tamaño base */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-origin: center center; /* crece desde el centro */
+}
+
+/* Efecto de crecimiento y brillo */
+.imagen-interna:hover {
+  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+}
+
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #000000;
+          color: #ffffff;
+          font-weight: bold;
+          border: 2px solid #ffffff;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #494949;
+          color: #0b0b0b;
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+        }
+        
+              
+.shake{
+        animation-name: shake;
+        -webkit-animation-name: shake;
+        -moz-animation-name: shake;
+    animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+    animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        }
+        
+    @keyframes shake {
+        0%  {transform: translate(1px, 1px) rotate(0deg);}
+        10% {transform: translate(-1px, -2px) rotate(-1deg);}
+        20% {transform: translate(-3px, 0px) rotate(1deg);}
+        30% {transform: translate(3px, 2px) rotate(0deg);}
+        40% {transform: translate(1px, -1px) rotate(1deg);}
+        50% {transform: translate(-1px, 2px) rotate(-1deg);}
+        60% {transform: translate(-3px, 1px) rotate(0deg);}
+        70% {transform: translate(3px, 1px) rotate(-1deg);}
+        80% {transform: translate(-1px, -1px) rotate(1deg);}
+        90% {transform: translate(1px, 2px) rotate(0deg);}
+        100% {transform: translate(1px, -2px) rotate(-1deg);}
+    }
+    .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+   <body>
+    <body>
+        <div class="contenedor">
+            <header>
+                <h1>BLACK METAL</h1>
+                <h2>------------------------------------------------------</h2>
+            </header>
+            
+            <p>El Black Metal es un subgénero extremo del Heavy Metal, caracterizado por el uso de 'tremolo picking',</p>
+            <p>'blast beats' y voces desgarradas (shrieks).</p>
+            <p>Surgió principalmente en la escena </p>
+            <p>noruega de los años 90 (Second Wave) y se define por su estética cruda,</p> 
+            <p>líricas oscuras, anticristianas y paganas.</p>
+            
+            <a href="index.html" class="boton-redireccion shake">VOLVER</a>
+          <a href="https://www.youtube.com/watch?v=f6C0vxAvJsA&list=PLXUve4JeIRsjIb1dm2pCz57SbRv3z8cXd&index=16" 
+            class="boton-redireccion shake" 
+            target="_blank">
+             MAYHEM 
+          </a>
+          <a href="https://www.youtube.com/watch?v=2hLKpU1O1iE&list=PLNvPpoiwaYL2HmKIIwmAeLn_3SPape25Y" 
+            class="boton-redireccion shake" 
+            target="_blank">
+             CANNIBAL CORPSE
+          </a>
+          <a href="https://www.youtube.com/watch?v=LtfCezHXL94&list=OLAK5uy_n708tMWdJy0Pztg9CTHOvV8fzeUk7YqqE" 
+            class="boton-redireccion shake" 
+            target="_blank">
+             PUTRESCENT
+          </a>
+          <img src="g8.png" alt="gif" class="imagen-interna" id="g1">
+     </div>
+           <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/life.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g1");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+   </body>
+  </html>

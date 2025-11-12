@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>METALCORE</title>
+     <style>
+        body, html {
+         color: #ff9898; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+   <body>
+    <div class="contenedor">
+      <header>
+        <h1>METALCORE</h1>
+        <h2>------------------------------------------------------</h2>
+        <P>El METALCORE es un subgénero del METAL que fusiona el HEAVY METAL con el HARDCORE PUNK</P>
+        <P> caracterizado por riffs agresivos, breakdowns potentes, voces guturales mezcladas con limpias y una gran energía en directo.</P>
+        <a herf="index.html"class="boton-redireccion bounce">VOLVER</a>
+        <a href="https://www.youtube.com/watch?v=0PjWfl6GjEs&list=PL-Iu-oGq1SyaJ9ZB5S_NdTEAxyj-4cTXT" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                KILLSWITCH ENGAGE
+        </a>
+        <a href="https://www.youtube.com/watch?v=1eWri02vaIc&list=PLUwsfagaCki9K97v_Rq0WztSHgsDt25KR" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                AS I LAY DYING
+        </a>
+        <a href="https://www.youtube.com/watch?v=5ItHNdrPEh0&list=PLs9pvRjAsqb6WcohL19R6s8HPWBYbOoF_" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+              PARKWAY DRIVE
+        </a>
+      </header>
+      <img src="g15.png" alt="gif" class="imagen-interna" id="g1">
+    </div>
+                                <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/u.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g1");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+   </body>
+ </html>

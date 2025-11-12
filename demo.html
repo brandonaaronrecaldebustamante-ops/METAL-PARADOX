@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="loguo.ico" type="image/x-icon">
+  <title>DISCOS</title>
+  <style>
+    body {
+      color: #ff9898;
+      background: url(fondosss.jpg) center center / cover no-repeat;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .boton-redireccion {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 18px;
+      background-color: #0b0b0b;
+      color: #ff5555;
+      font-weight: bold;
+      border: 2px solid #ff5555;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .boton-redireccion:hover {
+      background-color: #b10d0d;
+      color: #0b0b0b;
+      box-shadow: 0 0 10px rgba(255,85,85,0.6);
+    }
+
+    .discos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .disco {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .disco img {
+      width: 130px;
+      cursor: pointer;
+      transition: transform 0.5s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    }
+
+    .disco img:hover {
+      transform: scale3d(1.4, 1.4, 1);
+      box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+                  0 0 50px rgba(255, 0, 0, 0.6);
+      filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+    }
+
+    /*  Animación de giro */
+    .girando {
+      animation: spin 3s linear infinite, vibrar 0.15s infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /*  Animación de vibración */
+    @keyframes vibrar {
+      0% { transform: rotate(0deg) translate(0px, 0px); }
+      20% { transform: rotate(1deg) translate(1px, -1px); }
+      40% { transform: rotate(-1deg) translate(-1px, 1px); }
+      60% { transform: rotate(1deg) translate(1px, 1px); }
+      80% { transform: rotate(-1deg) translate(-1px, -1px); }
+      100% { transform: rotate(0deg) translate(0px, 0px); }
+    }
+
+    h3 {
+      margin-top: 10px;
+      color: #ffb3b3;
+    }
+    
+              
+.surprise:hover{
+    animation-name: surprise;
+        -webkit-animation-name: surprise;
+        -moz-animation-name: surprise;
+    animation-duration: .8s;
+        -webkit-animation-duration: .8s;
+        -moz-animation-duration: .8s;
+}
+
+    @keyframes surprise
+    {
+        0% {transform: rotate(0deg) scale(1,1);;}
+        10% {transform: rotate(7deg) scale(2,2);}
+        20% {transform: rotate(-7deg) scale(2,2);}
+        30% {transform: rotate(7deg) scale(2,2);}
+        40% {transform: rotate(-7deg) scale(2,2);}
+        50% {transform: rotate(7deg) scale(2,2);}
+        60% {transform: rotate(-7deg) scale(2,2);}
+        70% {transform: rotate(7deg) scale(2,2);}
+        80% {transform: rotate(-7deg) scale(2,2);}
+        90% {transform: rotate(7deg) scale(2,2);}
+        100% {transform: rotate(0deg) scale(1,1);}
+    }
+              
+  </style> 
+</head>
+
+<body>
+  <h1>-DISCOS INTERACTIVOS-</h1>
+  <h2>------------------------------------------------------</h2>
+  <a href="index.html" class="boton-redireccion surprise">VOLVER</a> 
+
+  <!-- Contenedor de Discos -->
+  <div class="discos">
+     <div class="disco">
+         <img src="disc.gif" data-audio="Crazy Train.mp3" alt="Disco 1">
+         <h3>[Crazy Train]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Down with the Sickness.mp3" alt="Disco 2">
+         <h3>[Down with the Sickness]</h3>
+      </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="EL TRISTE.mp3" alt="Disco 3">
+         <h3>[El Triste]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Fuel.mp3" alt="Disco 4">
+         <h3>[Fuel]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Hail to the King.mp3" alt="Disco 5">
+         <h3>[Hail to the King]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="José José - La Nave del Olvido (Revisitado [Lyric Video]).mp3" alt="Disco 6">
+         <h3>[La Nave del Olvido]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Juanes - La Camisa Negra.mp3" alt="Disco 7">
+         <h3>[La Camisa Negra]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Killing Strangers.mp3" alt="Disco 8">
+         <h3>[Killing Strangers]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Marilyn Manson - Sweet Dreams (Are Made Of This) (Alt. Version).mp3" alt="Disco 9">
+         <h3>[Sweet Dreams]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="METALLICA For Whom The Bell Tolls & Master of Puppets.mp3" alt="Disco 10">
+         <h3>[For Whom The Bell Tolls & Master of Puppets]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Metalocalypse Dethklok  Awaken   Adult Swim.mp3" alt="Disco 11">
+         <h3>[Metalocalypse Dethklok]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Motörhead – Enter Sandman (Official Video).mp3" alt="Disco 12">
+         <h3>[Enter Sandman]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Murmaider.mp3" alt="Disco 13">
+         <h3>[Murmaider]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="My Name Is Murder.mp3" alt="Disco 14">
+         <h3>[My Name Is Murder]</h3>
+     </div>
+      <div class="disco">
+         <img src="disc.gif" data-audio="Papa Roach - Last Resort (Squeaky Clean Version) (Official Music Video).mp3" alt="Disco 15">
+         <h3>[Last Resort]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Rammstein - Du Hast (Official 4K Video).mp3" alt="Disco 16">
+         <h3>[Du Hast]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Rein raus.mp3" alt="Disco 17">
+         <h3>[Rein raus]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Rob Zombie - Dragula.mp3" alt="Disco 17">
+         <h3>[Rob Zombie]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Secreto De Amor.mp3" alt="Disco 17">
+         <h3>[Secreto de Amor]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Seek & Destroy (Remastered).mp3" alt="Disco 17">
+         <h3>[Seek & Destroy]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="Symphony Of Destruction.mp3" alt="Disco 17">
+         <h3>[Symphony of Destruction]</h3>
+     </div>
+     <div class="disco">
+         <img src="disc.gif" data-audio="System Of A Down - Chop Suey! (Official HD Video).mp3" alt="Disco 17">
+         <h3>[System of a Down]</h3>
+     </div>
+  </div>
+
+  <!-- 🎧 Script de Audio -->
+  <script>
+    const discos = document.querySelectorAll('.disco img');
+    let audioActual = null;
+
+    discos.forEach(disco => {
+      disco.addEventListener('click', () => {
+        const archivo = "audio/" + disco.dataset.audio;
+
+        // Si hay un audio sonando, detenerlo
+        if (audioActual && !audioActual.paused) {
+          audioActual.pause();
+          audioActual.currentTime = 0;
+          document.querySelectorAll('.disco img').forEach(d => {
+            d.classList.remove('girando');
+            d.style.filter = "none";
+          });
+        }
+
+        // Si el mismo audio está activo, detenerlo
+        if (audioActual && audioActual.src.includes(archivo)) {
+          audioActual = null;
+          return;
+        }
+
+        // Reproducir nuevo audio
+        audioActual = new Audio(archivo);
+        audioActual.volume = 0.6;
+        audioActual.play();
+
+        // Efectos visuales
+        disco.classList.add('girando');
+        disco.style.filter = "drop-shadow(0 0 25px #ff5555)";
+
+        // Cuando termine, se quita el efecto
+        audioActual.addEventListener('ended', () => {
+          disco.classList.remove('girando');
+          disco.style.filter = "none";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">      
+      <title>NU METAL</title>
+      <style>
+       body, html {
+         color: #ff9898; 
+         height: 100%;
+         width: 100vw;
+         display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+        /* GIF centrado y con animación tipo "grow" */
+.imagen-interna {
+  display: block;
+  margin: 30px auto;        /* mantiene el centrado */
+  width: 350px;             /* tamaño base */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-origin: center center; /* crece desde el centro */
+}
+
+/* Efecto de crecimiento y brillo */
+.imagen-interna:hover {
+  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+}
+
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+      </style>
+   </head>
+   <body>
+     <div class="contenedor">
+        <header>
+          <h1>NU METAL</h1>
+          <h2>------------------------------------------------------</h2>
+        </header>
+        <p>En este género se integra korn linkim park y</p>
+        <p>deftones, esto mezcla elementos como funk y hip-hop.</p>
+        <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+        <a href="https://www.youtube.com/watch?v=ihgc5LQbjg8&list=PLn6ITQn_McBri3_ykn6zDEG_yBSdGVkv_&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         KORN
+        </a>
+        <a href="https://www.youtube.com/watch?v=Ph8Qt3DHVwo&list=PLZBdlk1Fw_vkJli0hrUFAQWHdux6WUq4t&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         SYSTEM OF A DOWN
+        </a>
+       <a href="https://www.youtube.com/watch?v=3TokaT9MPLM&list=PLW9driTIRT18fqJJk17oULvGGf29Urc-5" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         SLIPKNOT
+       </a>
+        <a href="https://www.youtube.com/watch?v=dSwfPbGzVZs&list=PLPSZvoRTJajLCOJMGGgXDjQgjWfzLErB2&index=9" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         DEFTONES
+       </a>
+        <a href="https://www.youtube.com/watch?v=0N_k4ZU7jOw&list=PL0_4B0_xkaVro6vEWZDRPJ1rYHCBYgJoq" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         LIMPBIZKIT
+      </a>
+      <a href="https://www.youtube.com/watch?v=84J_XmGkX48&list=PL3A_1s_Z8MQbYIvki-pbcerX8zrF4U8zQ&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         LINKIN PARK
+      </a>
+      <a href="https://youtube.com/playlist?list=PLkROH3Eqs0T-ueRtKvSd6tqBAk4SCHmum&si=DLL_ldv7FSUUVtIH" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         SNOT
+      </a>
+      <img src="g1.png" alt="gif" class="imagen-interna" id="g1">
+     </div>
+           <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/nu metal sol.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g1");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+   </body>
+</html>

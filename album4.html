@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>GORE GRIND</title>
+     <style>
+        body, html {
+         color: #ff9898; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+        /* GIF centrado y con animación tipo "grow" */
+.imagen-interna {
+  display: block;
+  margin: 30px auto;        /* mantiene el centrado */
+  width: 350px;             /* tamaño base */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-origin: center center; /* crece desde el centro */
+}
+
+/* Efecto de crecimiento y brillo */
+.imagen-interna:hover {
+  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+}
+
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+   <body>
+     <div class="contenedor">
+       <header>
+         <h1>GORE GRIND</h1>
+         <h2>_____________________________________________________</h2>
+       </header> 
+       <p>Se caracteriza por sus guitarras muy distorsionadas se enfoca en lo grotesco.</p>
+       <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+       <a href="https://www.youtube.com/watch?v=F1fbl22flkY&list=PL3ZeiVcMmvV-HNv2OW4DWRsW_sRS0VzrY" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           BRUTAL PIG
+         </a>
+          <a href="https://www.youtube.com/watch?v=-SLWJbn3k94&list=PL19E40E07E8DA29E8" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+          CARCASS
+         </a>
+           <a href="https://www.youtube.com/watch?v=-lGnyAu-5YY&list=PL62YeRDqg-_kZmovQywhfFZzZoo92Ci-X" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+          GENERAL SURGERY
+         </a>
+         <a href="https://www.youtube.com/watch?v=3QQV_ugB8qY&list=PLgtvGkabBTggc8_ZMPUwX5HTcAWqvbsAX" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+          LAST DAYS OF HUMANITY
+         </a>
+         <a href="https://www.youtube.com/watch?v=-HkOhioq_GI&list=PLWb0uHHRNudT1Qfl42qlXTC_NVxGNaAla" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+         GULTALAX
+         </a>
+         <img src="g4.png" alt="gif" class="imagen-interna" id="g4">
+      </div>
+            <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/sol 4.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g4");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+    </body>
+</html>

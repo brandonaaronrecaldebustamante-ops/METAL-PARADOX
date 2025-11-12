@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>METAL-PARADOX</title>
+      <style>
+       body {
+         text-align: center;      
+         font-family: Arial, sans-serif;
+         background-color: #353333;
+         color: rgb(255, 150, 150);
+       }
+       img { 
+         display: block;       
+         margin: 20px auto;       
+         width: 550px; 
+        }
+        h2 {
+          margin: 10px 0;
+        }
+       .botones {
+         width: 100%;
+         display: flex;
+         justify-content: center;  /* centra el grupo horizontalmente */
+         margin-top: 20px;
+        }
+       .grupo-botones {
+         display: flex;
+         flex-wrap: wrap;          /* hace que los botones bajen si no caben */
+         justify-content: center;  /* centra dentro del grupo */
+         gap: 11px;                /* espacio entre botones */
+         max-width: 900px;         /* ancho máximo centrado */
+        }
+       .boton-redireccion {
+         display: inline-block;
+         padding: 10px 18px;
+         background-color: #0b0b0b;
+         color: #ff5555;
+         font-weight: bold;
+         border: 2px solid #ff5555;
+         border-radius: 8px;
+         cursor: pointer;
+        }
+       .boton-redireccion:hover {
+         background-color: #b10d0d;
+         color: #0b0b0b;
+         box-shadow: 0 0 10px rgba(255,85,85,0.6);
+       }
+       .grow {
+         transition: transform 0.5s, color 0.1s;
+         -webkit-transition: transform 0.5s, color 0.1s;
+         -moz-transition: transform 0.5s, color 0.1s;
+        }
+       .grow:hover {
+         transform: scale3d(1.5, 1.5, 1);
+         -webkit-transform: scale3d(1.5, 1.5, 1);
+         -moz-transform: scale3d(1.5, 1.5, 1);
+        }    
+       .shakeFix:hover{
+           animation-name: shakefix;
+               -webkit-animation-name: shakefix;
+               -moz-animation-name: shakefix;
+           animation-duration: 1s;
+               -webkit-animation-duration: 1s;
+               -moz-animation-duration: 1s;
+           animation-iteration-count: infinite;
+               -webkit-animation-iteration-count: infinite;
+               -moz-animation-iteration-count: infinite;
+       }
+       @keyframes shakefix {
+          0%  {transform: translate(1px, 1px);}
+          10% {transform: translate(-1px, -2px);}
+          20% {transform: translate(-3px, 0px);}
+          30% {transform: translate(3px, 2px);}
+          40% {transform: translate(1px, -1px);}
+          50% {transform: translate(-1px, 2px);}
+          60% {transform: translate(-3px, 1px);}
+          70% {transform: translate(3px, 1px);}
+          80% {transform: translate(-1px, -1px);}
+          90% {transform: translate(1px, 2px);}
+          100% {transform: translate(1px, -2px);}
+        }
+  </style>
+    </head>    
+    <body>      
+     <div class="contenedor2">
+       <img src="guitar1.png" alt="Guitarra izquierda" class="izquierda">
+       <img src="guitar3.png" alt="Guitarra derecha" class="derecha">
+     </div>
+      <div class="contenedor">
+        <header>
+         <img src="logo.png" alt="logo" class="logo">
+         <h1>¿QUÉ DESEAS ESCUCHAR?</h1>
+         <h2>________________________________________________________</h2>
+       </header>
+       <p>Esta página fue creada para los amantes del rock y el metal engloba todos </p>
+       <p>los géneros y sub géneros. [Página interactiva]</p>
+       <div class="botones">
+         <div class="grupo-botones">
+           <a href="album1.html" class="boton-redireccion grow">NU METAL</a>
+           <a href="album2.html" class="boton-redireccion grow">HEAVY METAL</a>
+           <a href="album3.html" class="boton-redireccion grow">METAL PROGRESIVO</a>
+           <a href="album4.html" class="boton-redireccion grow">GORE GRIND</a>
+           <a href="album5.html" class="boton-redireccion grow">SYMPHONIC METAL</a>
+           <a href="album6.html" class="boton-redireccion grow">ROCK EN ESPAÑOL</a>
+           <a href="album7.html" class="boton-redireccion grow">ROCK PSICODELICO</a>
+           <a href="album8.html" class="boton-redireccion grow">TRASH METAL</a>
+           <a href="album9.html" class="boton-redireccion grow">BLACK METAL</a>
+           <a href="album10.html" class="boton-redireccion grow">POWER METAL</a>
+           <a href="album11.html" class="boton-redireccion grow">DOOM METAL</a>
+           <a href="album12.html" class="boton-redireccion grow">GOTHIC METAL</a>
+           <a href="album13.html" class="boton-redireccion grow">POP ROCK</a>
+           <a href="album14.html" class="boton-redireccion grow">INDIE ROCK</a>
+           <a href="album15.html" class="boton-redireccion grow">GRUNGE</a>
+           <a href="album16.html" class="boton-redireccion grow">GLAM METAL</a>
+           <a href="album17.html" class="boton-redireccion grow">METALCORE</a>
+           <a href="album18.html" class="boton-redireccion grow">JOSÉ JOSÉ</a>
+         </div>
+       </div>
+         <img src="casette.gif" alt="gif" class="imagen-interna" id="casette">
+         <p>________________________________________________________</p>
+         <p><h6>FECHA DE CREACIÓN DE LA PÁGINA:</h6></p>
+         <p><h6>---------09/11/2025-----------</h6></p>
+         <p><h6>FECHA DE ULTIMA EDICIÓN: 11/11/2025</h6></p>
+         <p>-------</p>
+         <a href="demo.html" class="boton-redireccion shakeFix">DISCOS DEMO</a>
+      </div>
+      <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/Secreto De Amor.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("casette");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+
+    </body>
+</html>         

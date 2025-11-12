@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>ROCK EN ESPAÑOL</title>
+     <style>
+        body, html {
+         color: #ff9898; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+        /* GIF centrado y con animación tipo "grow" */
+.imagen-interna {
+  display: block;
+  margin: 30px auto;        /* mantiene el centrado */
+  width: 350px;             /* tamaño base */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-origin: center center; /* crece desde el centro */
+}
+
+/* Efecto de crecimiento y brillo */
+.imagen-interna:hover {
+  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+}
+
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+  <body>
+        <div class="contenedor">
+            <header>
+                <h1 class="bounce">🎤 ROCK EN ESPAÑOL 🎸</h1>
+                <h2>------------------------------------------------------</h2>
+            </header> 
+            <p>El Rock en Español es un vasto movimiento que **no tiene una característica única**, sino que es una explosión de estilos que **abarca todo**, desde el Pop Rock melódico hasta el Rock Duro y el Post-Punk.</p>
+            <p>Aquí se celebra la diversidad y la lírica poderosa de Hispanoamérica y España.</p>
+            
+            <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+            
+            <a href="https://youtube.com/playlist?list=PLpsR0vN2m6L2da46mL8jVd2R2DWIEDUxO" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+                SODA STEREO
+            </a>
+
+            <a href="https://youtube.com/playlist?list=PLp1GzOwZlc5WarBMWJhWcu66yy1hRXMk6" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+                CAIFANES
+            </a>
+
+            <a href="https://youtube.com/playlist?list=PLSAPmJfjkKKA3AxJPJ959_ogofVCCQsOU" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+                HÉROES DEL SILENCIO
+            </a>
+
+            <a href="https://youtube.com/playlist?list=PL1693DD852AD5ED03" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+                SARATOGA
+            </a>
+
+            <a href="https://youtube.com/playlist?list=PLgaFNC_I_ZklNuSxim3hAzkLecGp0T7qy" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+                RATA BLANCA
+            </a>
+            
+            <footer>
+                <p style="margin-top: 30px; font-size: 0.9em;">-- La voz y el ritmo de una generación --</p>
+            </footer>
+            <img src="g6.png" alt="gif" class="imagen-interna" id="g1">
+        </div>
+              <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/amante.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g1");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+    </body>
+</html>

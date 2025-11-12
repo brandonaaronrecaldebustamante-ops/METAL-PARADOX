@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>METAL</title>
+     <style>
+       body, html {
+         color: #ff9898; 
+         height: 100%;
+         width: 100vw;
+         display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+        /* GIF centrado y con animación tipo "grow" */
+.imagen-interna {
+  display: block;
+  margin: 30px auto;        /* mantiene el centrado */
+  width: 350px;             /* tamaño base */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-origin: center center; /* crece desde el centro */
+}
+
+/* Efecto de crecimiento y brillo */
+.imagen-interna:hover {
+  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+}
+
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+      </style>
+   </head>
+    <body>
+      <div class="contenedor">
+       <header>
+         <h1>METAL PROGRESIVO</h1>
+         <h2>_____________________________________________________</h2>
+       </header> 
+        <p>Se caracteriza por sus guitarras y su ritmo poderoso intensidad y volumen.</p>
+       <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+        <a href="https://www.youtube.com/watch?v=-BKHCIVzV38&list=PLL6eMqeMIJ7ur80HmBP1l17AB9JyBTodL" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         DREAM THEATER
+         </a>
+          <a href="https://www.youtube.com/watch?v=5bq8t-DEdJU&list=PLWoAt7HjLTWGiRYQ0iwusjWYuJUoMIsx-&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         OPETH
+         </a>
+          <a href="https://www.youtube.com/watch?v=3BXyEUOuNds&list=PL5yGB_eqIALRfoednx480iOjvXjmIG1Em&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         TOOL
+         </a>
+          <a href="https://www.youtube.com/watch?v=ErgS8UIdUaU&list=PLH17Scn8L7giuF-r9Fr2-ginUeLnmgVCr&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         SYMPHONY X
+         </a>
+         <a href="https://www.youtube.com/watch?v=EGeoKEgUcZU&list=PLQGrRTjQT3n8MR8tub7sTjSkAkBWRcULq&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         GOJIRA
+         </a>
+         <a href="https://www.youtube.com/watch?v=H5lyVRLsFBk&list=PLZ9DoO2uX9wWxAi3Zv5NNwpxdCQ4-rKEQ&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         TESSERACT
+         </a>
+         <a href="https://www.youtube.com/watch?v=xnaEFtFWn7s&list=PLONVEQP6SwpF0cNhP7czHbz2u5w7zFaCS&index=1" 
+         class="boton-redireccion bounce" 
+         target="_blank">
+         LEPROUS
+         </a>
+         <img src="g3.png" alt="gif" class="imagen-interna" id="g1">
+      </div>
+            <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/Of Sins and Shadows.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g1");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+    </body>
+</html>
+   

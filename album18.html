@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>JOSE JOSE</title>
+     <style>
+        body, html {
+         color: #ff9898; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .imagen-interna {
+          display: block;
+         margin: 30px auto;        /* mantiene el centrado */
+         width: 350px;             /* tamaño base */
+         transition: transform 0.5s ease, box-shadow 0.4s ease;
+         transform-origin: center center; /* crece desde el centro */
+       }
+       /* Efecto de crecimiento y brillo */
+       .imagen-interna:hover {
+         transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+         box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+                 0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+         filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+   <body>
+      <div class="contenedor">
+        <header>
+          <h1>JOSÉ JOSÉ</h1>
+          <h2>------------------------------------------------------</h2>
+        </header>
+        <p></p>
+        <p></p>
+          <a href="https://www.youtube.com/playlist?list=PLdbKhsLNY9JyvoE5kZLPw_7GbkGk82zSw" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+              PLAYLIST 1
+        </a>
+        <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+        <a href="https://www.youtube.com/playlist?list=PL4iSbgi3WlCrtZgZ-KG5JLovjLYMV9c5q" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+              PLAYLIST 2
+        </a>
+        <img src="GG.png" alt="gif" class="imagen-interna" id="g8">
+        <img src="disco.gif" alt="gif" class="imagen-interna" id="disco">
+      </div>
+<script>
+  // 🎵 Primer audio (para el disco)
+  const audioDisco = new Audio("audio/EL TRISTE.mp3");
+  audioDisco.volume = 0.6;
+
+  const disco = document.getElementById("disco");
+
+  disco.addEventListener("click", () => {
+    if (audioDisco.paused) {
+      audioDisco.play();
+      disco.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audioDisco.pause();
+      disco.style.filter = "none";
+    }
+  });
+</script>
+
+<script>
+  // 🎵 Segundo audio (para la imagen GG.png)
+  const audioG8 = new Audio("audio/The 4 Seasons, Op. 84, RV 297, Winter.mp3");
+  audioG8.volume = 0.6;
+
+  const g8 = document.getElementById("g8");
+
+  g8.addEventListener("click", () => {
+    if (audioG8.paused) {
+      audioG8.play();
+      g8.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audioG8.pause();
+      g8.style.filter = "none";
+    }
+  });
+</script>
+
+   </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>DOOM METAL</title>
+      <style>
+          body, html {
+         color: #ff9898; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+   <body>
+    <div class="contenedor">
+      <header>
+         <h1>DOOM METAL</h1>
+        <h2>------------------------------------------------------</h2>
+      <p>El DOOM METAL es un subgénero del HEAVY METAL que se caracteriza por tener ritmos lentos</P>
+        <p>, riffs pesados y una atmósfera oscura o melancólica, con letras que suelen </p>
+        <P>hablar de desesperación, muerte o tristeza.</p>
+          <a herf="index.html" class="boton-redireccion shake">VOLVER</a>
+          <a href="https://www.youtube.com/watch?v=04QO_kcB0iY&list=PLFSLrr8REK4UxhwrsYBMYvbpfReXNMFN2" 
+            class="boton-redireccion shake" 
+            target="_blank">
+           CANDLEMASS
+          </a>
+           <a href="https://www.youtube.com/watch?v=4XTsrE0Lbtc&list=PLXIJQl3uIfNOMOthzBvyFmLIuPBfLc8qN&index=1" 
+            class="boton-redireccion shake" 
+            target="_blank">
+          SAINT VITUS
+          </a> <a href="https://www.youtube.com/watch?v=-XvgI126Lnw&list=PLSkWWW7aQ_1ADMqUNmVz0csbcPhw2Z1t3" 
+            class="boton-redireccion shake" 
+            target="_blank">
+         PARADISE LOST
+          </a>
+          <a href="https://www.youtube.com/watch?v=4dIziUtYDdQ&list=PLuLT7w7HzHmkK2-gqVUhkMRg713ul9_g5" 
+            class="boton-redireccion shake" 
+            target="_blank">
+           MY DYING BRIDE
+          </a>
+      </header>
+      <img src="g10.png" alt="gif" class="imagen-interna" id="g1">
+    </div>
+              <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/2023.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g1");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+   </body>
+</html>

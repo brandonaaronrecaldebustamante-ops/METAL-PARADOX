@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>GLAM METAL</title>
+     <style>
+        body, html {
+         color: #ff9898; 
+         width: 100vw;
+          display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+     </style>
+   </head>
+   <body>
+    <div>
+      <div class="contenedor">
+            <header>
+                <h1 class="bounce">GLAM METAL</h1>
+                <h2>------------------------------------------------------</h2>
+            </header>
+            
+            <p>El Glam Metal (también conocido como Hair Metal) es un subgénero del Heavy Metal de los 80, famoso por su estética andrógina, maquillaje y riffs pegadizos.</p>
+            <p>Se enfoca en temas de fiesta, chicas y rebeldía con un sonido melódico.</p>
+          
+            <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+            <a href="https://youtube.com/playlist?list=PLOnvgaX569yuVVX0E38tBxQb83ZPqay-l" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                MÖTLEY CRÜE
+            </a>
+            <a href="https://youtube.com/playlist?list=PLofmCZWRdOtl1dM2XQPx2_8KxveP6KbTt" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                GUNS N' ROSES
+            </a>
+            <a href="https://youtube.com/playlist?list=PL4iSbgi3WlCqfWADVzDtCingx4Uq3ni3n" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                BON JOVI
+            </a>
+            <a href="https://youtube.com/playlist?list=PLF10CD8DBC7E24650" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                POISON
+            </a>
+            <a href="https://youtube.com/playlist?list=PLyQTOBNGx4PvXo4sFOmK7LHTFMxpz2bHt" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                DEF LEPPARD
+            </a>
+            <a href="https://youtube.com/playlist?list=PLH2Dn8TXyVtG6gnYmIL-0xcQXTDrgcWIA" 
+             class="boton-redireccion bounce" 
+             target="_blank">
+                PANTERA 
+            </a>
+            <img src="pantera.jpeg" alt="kim-pantera" class="imagen-interna" id="pantera">
+            <script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/Electric Funeral.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("pantera");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+    </body>
+
+</html>

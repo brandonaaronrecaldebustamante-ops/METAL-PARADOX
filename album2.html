@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="estilo.css">
+      <link rel="icon" href="loguo.ico" type="image/x-icon">
+      <title>HEAVY METAL</title>
+      <style>
+       body, html {
+         color: #ff9898; 
+         height: 100%;
+         width: 100vw;
+         display: flex;
+         justify-content: center;
+         background: url(fondo.jpg) center center;
+         background-size: cover;
+         overflow-x: hidden; /* evita desplazamiento lateral */
+         font-family: 'Courier New', monospace;
+        } 
+       .bounce {
+          animation-name: bounce;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        @keyframes bounce {
+         0% {transform: translateY(0);}
+         50% {transform: translateY(-10px);}
+         100% {transform: translateY(0);}
+        }      
+       h1 {
+         color: red;
+         text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        }
+        h2 {
+          color: red;
+        }
+        .boton-redireccion {
+          display: inline-block;
+          margin: 15px auto;          /* centra el botón horizontalmente */
+          padding: 12px 24px;
+          background-color: #0b0b0b;
+          color: #ff5555;
+          font-weight: bold;
+          border: 2px solid #ff5555;
+          border-radius: 8px;
+          text-decoration: none;
+          text-align: center; 
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .boton-redireccion:hover {
+          background-color: #b10d0d;
+          color: #0b0b0b;
+          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
+        }
+        .contenedor {
+  position: relative;
+  z-index: 10; /* por encima de las guitarras */
+  text-align: center;
+  padding-top: 80px;
+}
+/* GIF centrado y con animación tipo "grow" */
+.imagen-interna {
+  display: block;
+  margin: 30px auto;        /* mantiene el centrado */
+  width: 350px;             /* tamaño base */
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  transform-origin: center center; /* crece desde el centro */
+}
+
+/* Efecto de crecimiento y brillo */
+.imagen-interna:hover {
+  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
+              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+}
+
+      </style>
+    <body>
+      <div class="contenedor">
+         <header>
+            <h1>HEAVY METAL</h1>
+            <h2>------------------------------------------------------</h2>
+         </header>
+          <p>El heavy metal es un género de música rock caracterizado por su sonido potente.</P>
+          <P>guitarras eléctricas distorsionadas, ritmos intensos y voces enérgicas</p>
+          <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+          <a href="https://www.youtube.com/watch?v=IE8lXuSDVNU&list=PL3Gx7ENa8RQvmrBCxBUKoe_ufvaWj77FS&index=1" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           BLACK SABBATH
+         </a>
+         <a href="https://www.youtube.com/watch?v=UAKCR7kQMTQ&list=RDQMHIEn_gq_qy8&start_radio=1" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           DEEP PURPLE
+         </a>
+         <a href="https://www.youtube.com/watch?v=QSe1G3c0ZlQ&list=PLz6cAheObZchu0Ovm-T5vXXUbzBFrR2D9&index=1" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           UFO
+         </a>
+         <a href="https://www.youtube.com/watch?v=-21AtiWV3TE&list=PLEkR4zsbGEyj_Ffp_fPFufl91fHvcV0s6" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           LED ZEPPELIN
+         </a>
+         <a href="https://www.youtube.com/watch?v=0755SXCTCN0&list=PLp_G0HWfCo5pPo6TkA_9wNduhJ3KS2CvL" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           SCORPIONS
+         </a>
+         <a href="https://www.youtube.com/watch?v=073O9wFwTtY&list=PLDBA9B9B20B4985B2" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           THIN LIZZY
+         </a>
+         <a href="https://www.youtube.com/watch?v=rCACGI5lryU&list=PLuwhjGB5Sdugzb5wHkcVcbq2qfrNycsMi&index=1" 
+           class="boton-redireccion bounce" 
+           target="_blank">
+           JUDAS PRIEST 
+         </a>
+         <img src="g2.png" alt="gif" class="imagen-interna" id="g2">
+       </div>
+<script>
+  // Crear el objeto de audio
+  const audio = new Audio("audio/al sol.mp3");
+  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+
+  const casette = document.getElementById("g2");
+
+  casette.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      casette.style.filter = "drop-shadow(0 0 15px #ff5555)";
+    } else {
+      audio.pause();
+      casette.style.filter = "none";
+    }
+  });
+</script>
+    </body>
+</html>
+ 
