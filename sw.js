@@ -2,8 +2,26 @@ const nombreCache = 'rock-psico-v1';
 const archivosCache = [
   './',
   './index.html',
+    './album1.html',
+    './album2.html',
+    './album3.html',
+    './album4.html',
+    './album5.html',
+    './album6.html',
+    './album7.html',
+    './album8.html',
+    './album9.html',
+    './album10.html',
+    './album11.html',
+    './album12.html',
+    './album13.html',
+    './album14.html',
+    './album15.html',
+    './album16.html',
+    './album17.html',
+    './album18.html',
+    './creditos.html',
+    './demo.html',
   './manifest.json',
   './loguito.ico' // <--- Cambiado aquí
 ];
-
-/* ... el resto del código del sw.js se mantiene igual ... */
