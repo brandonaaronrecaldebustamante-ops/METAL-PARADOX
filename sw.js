@@ -1,4 +1,4 @@
-const nombreCache = 'rock-psico-v1'; 
+const nombreCache = 'rock-psico-v2'; 
 const archivosCache = [
   './',
   './index.html',
@@ -22,6 +22,37 @@ const archivosCache = [
     './album18.html',
     './creditos.html',
     './demo.html',
-  './manifest.json',
+    './estilo.css',
+    './manifest.json',
   './loguito.ico' // <--- Cambiado aquí
 ];
+// Instalar y forzar la entrada
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(nombreCache).then(cache => {
+      return cache.addAll(archivosCache);
+    }).then(() => self.skipWaiting()) 
+  );
+});
+
+// Activar y reclamar control de las pestañas abiertas
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.map(key => {
+          if (key !== nombreCache) return caches.delete(key);
+        })
+      );
+    }).then(() => self.clients.claim())
+  );
+});
+
+// Estrategia de respuesta
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request).then(res => {
+      return res || fetch(e.request);
+    })
+  );
+});
