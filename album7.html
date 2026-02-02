@@ -7,75 +7,90 @@
       <link rel="icon" href="loguo.ico" type="image/x-icon">
       <title>ROCK PSICODELICO</title>
       <style>
-        body, html {
-         color: #ff9898; 
-         width: 100vw;
-          display: flex;
-         justify-content: center;
-         background: url(fondo.jpg) center center;
-         background-size: cover;
-         overflow-x: hidden; /* evita desplazamiento lateral */
-         font-family: 'Courier New', monospace;
-        } 
-       .bounce {
-          animation-name: bounce;
-          animation-duration: 1s;
-          animation-iteration-count: infinite;
-        }
-        @keyframes bounce {
-         0% {transform: translateY(0);}
-         50% {transform: translateY(-10px);}
-         100% {transform: translateY(0);}
-        }      
-       h1 {
-         color: red;
-         text-shadow: 0 0 30px hsl(0, 100%, 50%);
-        }
-        h2 {
-          color: red;
-        }
-        .boton-redireccion {
-          display: inline-block;
-          margin: 15px auto;          /* centra el botón horizontalmente */
-          padding: 12px 24px;
-          background-color: #0b0b0b;
-          color: #ff5555;
-          font-weight: bold;
-          border: 2px solid #ff5555;
-          border-radius: 8px;
-          text-decoration: none;
-          text-align: center; 
-          cursor: pointer;
-          transition: 0.3s;
-        }
-        .boton-redireccion:hover {
-          background-color: #b10d0d;
-          color: #0b0b0b;
-          box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
-        }
-        .contenedor {
-  position: relative;
-  z-index: 10; /* por encima de las guitarras */
-  text-align: center;
-  padding-top: 80px;
-}
-/* GIF centrado y con animación tipo "grow" */
-.imagen-interna {
-  display: block;
-  margin: 30px auto;        /* mantiene el centrado */
-  width: 350px;             /* tamaño base */
-  transition: transform 0.5s ease, box-shadow 0.4s ease;
-  transform-origin: center center; /* crece desde el centro */
+    body, html {
+        color: #ff9898; 
+        width: 100%; /* Cambiado de 100vw para evitar desbordamiento */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background: url(fondo.jpg) center center fixed;
+        background-size: cover;
+        overflow-x: hidden; 
+        font-family: 'Courier New', monospace;
+    } 
+
+.contenedor {
+    position: relative;
+    z-index: 10; 
+    text-align: center; /* Mantiene el título y el texto centrados */
+    padding-top: 80px;
+    width: 100%;
+    max-width: 1000px; /* Un poco más ancho para que en PC se vean varios en fila */
+    margin: 0 auto;
 }
 
-/* Efecto de crecimiento y brillo */
-.imagen-interna:hover {
-  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
-  box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
-              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
-  filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
+    /* CONTENEDOR DE BOTONES: La clave para el orden */
+    .grupo-botones {
+        display: flex;
+        flex-wrap: wrap; /* Permite que se pongan en pares o solos */
+        justify-content: center;
+        gap: 10px; /* Espacio entre botones */
+        margin-top: 20px;
+    }
+
+.boton-redireccion {
+    /* Cambiamos flex por inline-block para que fluyan como palabras en un párrafo */
+    display: inline-block; 
+    margin: 8px 5px; /* 8px arriba/abajo y 5px a los lados para separarlos */
+    padding: 12px 24px;
+    background-color: #0b0b0b;
+    color: #ff5555;
+    font-weight: bold;
+    border: 2px solid #ff5555;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center; 
+    cursor: pointer;
+    transition: 0.3s;
+    
+    /* Esto evita que se vuelvan gigantes en móvil */
+    vertical-align: top;
 }
 
+    /* Ajuste para el subrayado largo de tu h2 */
+    h2 {
+        color: red;
+        font-size: 1.2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 10px 0;
+    }
+
+    h1 {
+        color: red;
+        text-shadow: 0 0 30px hsl(0, 100%, 50%);
+        font-size: 1.8rem;
+    }
+
+    .imagen-interna {
+        display: block;
+        margin: 30px auto;       
+        width: 80%; /* Adaptable al celular */
+        max-width: 350px;           
+        transition: transform 0.5s ease;
+    }
+
+    /* Animación Bounce */
+    .bounce {
+        animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {transform: translateY(0);}
+        50% {transform: translateY(-5px);}
+    }
      </style>
    </head>
   <body>
@@ -86,6 +101,7 @@
        </header> 
        <p>Se lo conoce como el sonido de la cultura hippie</p>
        <p>el objetivo principal es dar esa sensacion como si estuvieras fuera de ti.</P>
+        <div  class=""grupo-botones>
          <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
           <a href="https://www.youtube.com/watch?v=-0kcet4aPpQ&list=PL4pGkk3QBW28n6QCBWcmE76Ro7ONEzlMG" 
             class="boton-redireccion bounce" 
@@ -127,12 +143,12 @@
             target="_blank">
           13TH FLOOR ELEVATORS
           </a>
+          </div>
           <img src="g7.png" alt="gif" class="imagen-interna" id="g1">
     </div>
           <script>
-  // Crear el objeto de audio
   const audio = new Audio("audio/pink.mp3");
-  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+  audio.volume = 0.6; 
 
   const casette = document.getElementById("g1");
 

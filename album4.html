@@ -7,6 +7,33 @@
       <link rel="icon" href="loguo.ico" type="image/x-icon">
       <title>GORE GRIND</title>
      <style>
+      /* Esto no afecta a la PC, solo a móviles */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustar el ancho de los contenedores principales */
+    .tu-contenedor-principal, .container, section {
+        width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    /* 2. Si usas Flexbox para columnas, apílalas verticalmente */
+    .tu-fila-o-flex {
+        flex-direction: column !important;
+    }
+
+    /* 3. Ajustar imágenes para que no se salgan de la pantalla */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 4. Ajustar tamaños de letra si son muy grandes */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+}
         body, html {
          color: #ff9898; 
          width: 100vw;
@@ -14,23 +41,21 @@
          justify-content: center;
          background: url(fondo.jpg) center center;
          background-size: cover;
-         overflow-x: hidden; /* evita desplazamiento lateral */
+         overflow-x: hidden; 
          font-family: 'Courier New', monospace;
         } 
-        /* GIF centrado y con animación tipo "grow" */
 .imagen-interna {
   display: block;
-  margin: 30px auto;        /* mantiene el centrado */
-  width: 350px;             /* tamaño base */
+  margin: 30px auto;     
+  width: 350px;         
   transition: transform 0.5s ease, box-shadow 0.4s ease;
-  transform-origin: center center; /* crece desde el centro */
+  transform-origin: center center; 
 }
 
-/* Efecto de crecimiento y brillo */
 .imagen-interna:hover {
-  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  transform: scale3d(1.5, 1.5, 0.3);
   box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
-              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+              0 0 50px rgba(255, 0, 0, 0.6); 
   filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
 }
 
@@ -53,7 +78,7 @@
         }
         .boton-redireccion {
           display: inline-block;
-          margin: 15px auto;          /* centra el botón horizontalmente */
+          margin: 15px auto;         
           padding: 12px 24px;
           background-color: #0b0b0b;
           color: #ff5555;
@@ -72,7 +97,7 @@
         }
         .contenedor {
   position: relative;
-  z-index: 10; /* por encima de las guitarras */
+  z-index: 10; 
   text-align: center;
   padding-top: 80px;
 }
@@ -80,43 +105,66 @@
    </head>
    <body>
      <div class="contenedor">
-       <header>
-         <h1>GORE GRIND</h1>
-         <h2>_____________________________________________________</h2>
-       </header> 
-       <p>Se caracteriza por sus guitarras muy distorsionadas se enfoca en lo grotesco.</p>
-       <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
-       <a href="https://www.youtube.com/watch?v=F1fbl22flkY&list=PL3ZeiVcMmvV-HNv2OW4DWRsW_sRS0VzrY" 
-           class="boton-redireccion bounce" 
-           target="_blank">
-           BRUTAL PIG
-         </a>
-          <a href="https://www.youtube.com/watch?v=-SLWJbn3k94&list=PL19E40E07E8DA29E8" 
-           class="boton-redireccion bounce" 
-           target="_blank">
-          CARCASS
-         </a>
-           <a href="https://www.youtube.com/watch?v=-lGnyAu-5YY&list=PL62YeRDqg-_kZmovQywhfFZzZoo92Ci-X" 
-           class="boton-redireccion bounce" 
-           target="_blank">
-          GENERAL SURGERY
-         </a>
-         <a href="https://www.youtube.com/watch?v=3QQV_ugB8qY&list=PLgtvGkabBTggc8_ZMPUwX5HTcAWqvbsAX" 
-           class="boton-redireccion bounce" 
-           target="_blank">
-          LAST DAYS OF HUMANITY
-         </a>
-         <a href="https://www.youtube.com/watch?v=-HkOhioq_GI&list=PLWb0uHHRNudT1Qfl42qlXTC_NVxGNaAla" 
-           class="boton-redireccion bounce" 
-           target="_blank">
-         GULTALAX
-         </a>
-         <img src="g4.png" alt="gif" class="imagen-interna" id="g4">
-      </div>
+            <header>
+                <h1 class="bounce"> GORE GRIND </h1>
+                <h2>------------------------------------------------------</h2>
+            </header> 
+            
+            <p>El Goregrind es un subgénero ultra-extremo del Grindcore que se caracteriza por sus **guitarras muy distorsionadas**, 'blast beats' incesantes y la percusión constante.</p>
+            <p>Se **enfoca obsesivamente en lo grotesco**, la patología y la cirugía, utilizando vocales ininteligibles a menudo alteradas electrónicamente (pitch-shifted) para sonar aún más inhumanas.</p>
+
+            <a href="index.html" class="boton-redireccion bounce">VOLVER</a>
+            
+            <a href="https://www.youtube.com/watch?v=F1fbl22flkY&list=PL3ZeiVcMmvV-HNv2OW4DWRsW_sRS0VzrY" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+                BRUTAL PIG
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=-SLWJbn3k94&list=PL19E40E07E8DA29E8" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             CARCASS
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=-lGnyAu-5YY&list=PL62YeRDqg-_kZmovQywhfFZzZoo92Ci-X" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             GENERAL SURGERY
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=3QQV_ugB8qY&list=PLgtvGkabBTggc8_ZMPUwX5HTcAWqvbsAX" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             LAST DAYS OF HUMANITY
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=-HkOhioq_GI&list=PLWb0uHHRNudT1Qfl42qlXTC_NVxGNaAla" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             GUTALAX
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=qT5-q38gMqk&list=PL9CE9E8F35B6D5533" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             REGURGITATE (SUECIA)
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=4F9gW5Yv7lQ&list=PL730E7B15D75E88E5" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             DEAD INFECTION (POLONIA)
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=e_tD81Yg5W8&list=PL053C3F464E688A6F" 
+            class="boton-redireccion bounce" 
+            target="_blank">
+             PATHOLOGY (USA)
+            </a>
             <script>
-  // Crear el objeto de audio
   const audio = new Audio("audio/sol 4.mp3");
-  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+  audio.volume = 0.6; 
 
   const casette = document.getElementById("g4");
 

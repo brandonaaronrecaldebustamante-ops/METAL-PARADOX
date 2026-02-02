@@ -14,7 +14,7 @@
          justify-content: center;
          background: url(fondo.jpg) center center;
          background-size: cover;
-         overflow-x: hidden; /* evita desplazamiento lateral */
+         overflow-x: hidden;
          font-family: 'Courier New', monospace;
         } 
        .bounce {
@@ -36,7 +36,7 @@
         }
         .boton-redireccion {
           display: inline-block;
-          margin: 15px auto;          /* centra el botón horizontalmente */
+          margin: 15px auto;         
           padding: 12px 24px;
           background-color: #0b0b0b;
           color: #ff5555;
@@ -48,6 +48,33 @@
           cursor: pointer;
           transition: 0.3s;
         }
+        /* Esto no afecta a la PC, solo a móviles */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustar el ancho de los contenedores principales */
+    .tu-contenedor-principal, .container, section {
+        width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    /* 2. Si usas Flexbox para columnas, apílalas verticalmente */
+    .tu-fila-o-flex {
+        flex-direction: column !important;
+    }
+
+    /* 3. Ajustar imágenes para que no se salgan de la pantalla */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 4. Ajustar tamaños de letra si son muy grandes */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+}
         .boton-redireccion:hover {
           background-color: #b10d0d;
           color: #0b0b0b;
@@ -55,22 +82,22 @@
         }
         .imagen-interna {
   display: block;
-  margin: 30px auto;        /* mantiene el centrado */
-  width: 350px;             /* tamaño base */
+  margin: 30px auto;        
+  width: 350px;             
   transition: transform 0.5s ease, box-shadow 0.4s ease;
-  transform-origin: center center; /* crece desde el centro */
+  transform-origin: center center; 
 }
 
-/* Efecto de crecimiento y brillo */
+
 .imagen-interna:hover {
-  transform: scale3d(1.5, 1.5, 0.3);  /* igual que tus botones */
+  transform: scale3d(1.5, 1.5, 0.3);
   box-shadow: 0 0 25px rgba(255, 85, 85, 0.8),
-              0 0 50px rgba(255, 0, 0, 0.6); /* brillo rojizo */
+              0 0 50px rgba(255, 0, 0, 0.6);
   filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
 }
 .contenedor {
   position: relative;
-  z-index: 10; /* por encima de las guitarras */
+  z-index: 10; 
   text-align: center;
   padding-top: 80px;
 }
@@ -115,9 +142,8 @@
             <img src="metalica1.jpg" alt="gif" class="imagen-interna" id="metalica">
         </div>
              <script>
-  // Crear el objeto de audio
   const audio = new Audio("audio/METALLICA For Whom The Bell Tolls & Master of Puppets.mp3");
-  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+  audio.volume = 0.6; 
 
   const casette = document.getElementById("metalica");
 

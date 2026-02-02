@@ -1,0 +1,38 @@
+#cursor-frame {
+    position: fixed;
+    width: 120px;       /* tamaño del marco */
+    height: 120px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+}
+
+.corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+/* superior izquierda */
+.corner1 {
+    top: 0;
+    left: 0;
+}
+
+/* inferior derecha */
+.corner2 {
+    bottom: 0;
+    right: 0;
+}
+
+/* superior derecha */
+.corner3 {
+    top: 0;
+    right: 0;
+}
+
+/* inferior izquierda */
+.corner4 {
+    bottom: 0;
+    left: 0;
+}

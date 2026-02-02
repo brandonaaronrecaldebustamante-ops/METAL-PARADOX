@@ -75,6 +75,33 @@
   z-index: 10; /* por encima de las guitarras */
   text-align: center;
   padding-top: 80px;
+  /* Esto no afecta a la PC, solo a móviles */
+@media (max-width: 768px) {
+    
+    /* 1. Ajustar el ancho de los contenedores principales */
+    .tu-contenedor-principal, .container, section {
+        width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    /* 2. Si usas Flexbox para columnas, apílalas verticalmente */
+    .tu-fila-o-flex {
+        flex-direction: column !important;
+    }
+
+    /* 3. Ajustar imágenes para que no se salgan de la pantalla */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 4. Ajustar tamaños de letra si son muy grandes */
+    h1 {
+        font-size: 1.8rem !important;
+    }
+}
 }
       </style>
    </head>

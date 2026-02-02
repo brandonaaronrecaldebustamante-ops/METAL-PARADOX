@@ -6,6 +6,7 @@
   <link rel="icon" href="loguo.ico" type="image/x-icon">
   <title>DISCOS</title>
   <style>
+    
     body {
       color: #ff9898;
       background: url(fondosss.jpg) center center / cover no-repeat;
@@ -64,7 +65,6 @@
       filter: drop-shadow(0 0 15px rgba(255, 85, 85, 0.7));
     }
 
-    /*  Animación de giro */
     .girando {
       animation: spin 3s linear infinite, vibrar 0.15s infinite;
     }
@@ -74,7 +74,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /*  Animación de vibración */
     @keyframes vibrar {
       0% { transform: rotate(0deg) translate(0px, 0px); }
       20% { transform: rotate(1deg) translate(1px, -1px); }
@@ -113,7 +112,56 @@
         90% {transform: rotate(7deg) scale(2,2);}
         100% {transform: rotate(0deg) scale(1,1);}
     }
-              
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll; 
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+        word-break: break-all;
+        margin: 10px 0;
+    }
+
+    .discos {
+        gap: 15px; 
+        margin-top: 20px;
+    }
+
+    .disco {
+        width: 45%; 
+    }
+
+    .disco img {
+        width: 100% !important; 
+        max-width: 110px; 
+    }
+
+
+    .disco img:hover {
+        transform: scale3d(1.1, 1.1, 1); 
+    }
+
+    h3 {
+        font-size: 0.75rem; 
+        line-height: 1.2;
+    }
+
+    .surprise:hover {
+        animation-name: surprise-mobile;
+    }
+
+    @keyframes surprise-mobile {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); } 
+        100% { transform: scale(1); }
+    }
+}    
   </style> 
 </head>
 
@@ -122,7 +170,6 @@
   <h2>------------------------------------------------------</h2>
   <a href="index.html" class="boton-redireccion surprise">VOLVER</a> 
 
-  <!-- Contenedor de Discos -->
   <div class="discos">
      <div class="disco">
          <img src="disc.gif" data-audio="Crazy Train.mp3" alt="Disco 1">
@@ -214,7 +261,6 @@
      </div>
   </div>
 
-  <!-- 🎧 Script de Audio -->
   <script>
     const discos = document.querySelectorAll('.disco img');
     let audioActual = null;
@@ -223,7 +269,6 @@
       disco.addEventListener('click', () => {
         const archivo = "audio/" + disco.dataset.audio;
 
-        // Si hay un audio sonando, detenerlo
         if (audioActual && !audioActual.paused) {
           audioActual.pause();
           audioActual.currentTime = 0;
@@ -233,22 +278,18 @@
           });
         }
 
-        // Si el mismo audio está activo, detenerlo
         if (audioActual && audioActual.src.includes(archivo)) {
           audioActual = null;
           return;
         }
 
-        // Reproducir nuevo audio
         audioActual = new Audio(archivo);
         audioActual.volume = 0.6;
         audioActual.play();
 
-        // Efectos visuales
         disco.classList.add('girando');
         disco.style.filter = "drop-shadow(0 0 25px #ff5555)";
 
-        // Cuando termine, se quita el efecto
         audioActual.addEventListener('ended', () => {
           disco.classList.remove('girando');
           disco.style.filter = "none";
