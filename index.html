@@ -6,142 +6,128 @@
       <link rel="stylesheet" href="estilo.css">
       <link rel="icon" href="loguo.ico" type="image/x-icon">
       <link rel="icon" type="image/x-icon" href="./loguito.ico">
-
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#ff5555">
+      <link rel="manifest" href="./manifest.json">
+     <meta name="theme-color" content="#ff5555">
       <title>METAL-PARADOX</title>
       <style>
-        
-       body {
-         text-align: center;      
-         font-family: Arial, sans-serif;
-         background-color: #353333;
-         color: rgb(255, 150, 150);
-       }
-       img { 
-         display: block;       
-         margin: 20px auto;       
-         width: 550px; 
+          body {
+             text-align: center;      
+             font-family: Arial, sans-serif;
+             background-color: #353333;
+             color: rgb(255, 150, 150);
+           }
+          img { 
+             display: block;       
+             margin: 20px auto;       
+             width: 550px; 
+           }
+          h2 {
+             margin: 10px 0;
+            }
+          .botones {
+             width: 100%;
+             display: flex;
+             justify-content: center;  
+             margin-top: 20px;
+            }
+          .grupo-botones {
+             display: flex;
+             flex-wrap: wrap;         
+             justify-content: center; 
+             gap: 11px;            
+             max-width: 900px;     
+           }
+         .boton-redireccion {
+             display: inline-block;
+             padding: 10px 18px;
+             background-color: #0b0b0b;
+             color: #ff5555;
+             font-weight: bold;
+             border: 2px solid #ff5555;
+             border-radius: 8px;
+             cursor: pointer;
+           }
+         .boton-redireccion:hover {
+             background-color: #b10d0d;
+             color: #0b0b0b;
+             box-shadow: 0 0 10px rgba(255,85,85,0.6);
+           }
+        .grow {
+          transition: transform 0.5s, color 0.1s;
+          -webkit-transition: transform 0.5s, color 0.1s;
+          -moz-transition: transform 0.5s, color 0.1s;
+         }
+        .grow:hover {
+          transform: scale3d(1.5, 1.5, 1);
+          -webkit-transform: scale3d(1.5, 1.5, 1);
+          -moz-transform: scale3d(1.5, 1.5, 1);
+         }    
+       .texto-clic {
+          font-size: 11px;
+          color: #ff9898;
+          cursor: pointer;
+          list-style: none;
+         text-decoration: underline;
+         margin-bottom: 10px;
         }
-        h2 {
-          margin: 10px 0;
-        }
-       .botones {
-         width: 100%;
-         display: flex;
-         justify-content: center;  /* centra el grupo horizontalmente */
-         margin-top: 20px;
-        }
-       .grupo-botones {
-         display: flex;
-         flex-wrap: wrap;          /* hace que los botones bajen si no caben */
-         justify-content: center;  /* centra dentro del grupo */
-         gap: 11px;                /* espacio entre botones */
-         max-width: 900px;         /* ancho máximo centrado */
-        }
-       .boton-redireccion {
-         display: inline-block;
-         padding: 10px 18px;
-         background-color: #0b0b0b;
-         color: #ff5555;
-         font-weight: bold;
+      .texto-clic::-webkit-details-marker { display: none; }
+      .cuadro-desplegable {
+         background-color: rgba(0, 0, 0, 0.9);
          border: 2px solid #ff5555;
+         padding: 20px;
+         margin: 15px auto;
+         width: fit-content;
+         min-width: 280px;
          border-radius: 8px;
-         cursor: pointer;
+         box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+         text-align: center;
         }
-       .boton-redireccion:hover {
-         background-color: #b10d0d;
-         color: #0b0b0b;
-         box-shadow: 0 0 10px rgba(255,85,85,0.6);
+       .titulo-mini {
+         font-size: 9px;
+         color: #ff5555;
+         margin: 10px 0;
+         letter-spacing: 1px;
+         text-transform: uppercase;
+        } 
+      .fila-botones {
+         display: flex;
+         justify-content: center;
+         gap: 10px;
+         flex-wrap: wrap;
+         margin-bottom: 15px;
+        }
+     .btn-estetico {
+         text-decoration: none;
+         color: #ff5555;
+         border: 1px solid #ff5555;
+         padding: 6px 12px;
+         font-size: 10px;
+         font-weight: bold;
+         border-radius: 3px;
+         transition: 0.3s;
+         background: transparent;
+        }
+     .btn-estetico:hover {
+         background: #ff5555;
+         color: #000;
+         box-shadow: 0 0 10px #ff5555;
        }
-       .grow {
-         transition: transform 0.5s, color 0.1s;
-         -webkit-transition: transform 0.5s, color 0.1s;
-         -moz-transition: transform 0.5s, color 0.1s;
+     .link-fandom {
+         color: #ff5555;
+         text-decoration: underline;
+         font-weight: bold;
         }
-       .grow:hover {
-         transform: scale3d(1.5, 1.5, 1);
-         -webkit-transform: scale3d(1.5, 1.5, 1);
-         -moz-transform: scale3d(1.5, 1.5, 1);
-        }    
-        /* Estilo del texto que abre el cuadro */
-.texto-clic {
-    font-size: 11px;
-    color: #ff9898;
-    cursor: pointer;
-    list-style: none;
-    text-decoration: underline;
-    margin-bottom: 10px;
-}
-.texto-clic::-webkit-details-marker { display: none; }
-
-/* EL CUADRO (Fondo negro, borde rojo) */
-.cuadro-desplegable {
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 2px solid #ff5555;
-    padding: 20px;
-    margin: 15px auto;
-    width: fit-content;
-    min-width: 280px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-    text-align: center;
-}
-
-.titulo-mini {
-    font-size: 9px;
-    color: #ff5555;
-    margin: 10px 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.fila-botones {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-}
-
-/* BOTONES ESTÉTICOS */
-.btn-estetico {
-    text-decoration: none;
-    color: #ff5555;
-    border: 1px solid #ff5555;
-    padding: 6px 12px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 3px;
-    transition: 0.3s;
-    background: transparent;
-}
-
-.btn-estetico:hover {
-    background: #ff5555;
-    color: #000;
-    box-shadow: 0 0 10px #ff5555;
-}
-
-/* ESTILO TIPO FANDOM/WIKI */
-.link-fandom {
-    color: #ff5555;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.linea-roja {
-    border: 0;
-    border-top: 1px solid #ff5555;
-    margin: 15px 0;
-    opacity: 0.5;
-}
-
-.info-legal {
-    font-size: 9px;
-    color: #ff9898;
-    line-height: 1.4;
-}
+     .linea-roja {
+         border: 0;
+         border-top: 1px solid #ff5555;
+         margin: 15px 0;
+         opacity: 0.5;
+        }
+     .info-legal {
+         font-size: 9px;
+         color: #ff9898;
+         line-height: 1.4;
+        } 
        .shakeFix:hover{
            animation-name: shakefix;
                -webkit-animation-name: shakefix;
@@ -172,7 +158,6 @@
         overflow-x: hidden;
         width: 100%;
     }
-
     .contenedor2 img {
         width: 45% !important; 
         max-width: 200px;
@@ -180,18 +165,15 @@
         display: inline-block; 
         margin: 10px 2%;
     }
-
     img.logo, #casette {
         width: 80% !important;
         max-width: 300px;
         height: auto;
     }
-
     .botones {
         padding: 0 10px;
         box-sizing: border-box;
     }
-
     .grupo-botones {
         display: flex;
         flex-wrap: wrap; 
@@ -199,14 +181,12 @@
         width: 100%;
         justify-content: center;
     }
-
     .boton-redireccion {
         max-width: 90%; 
         box-sizing: border-box;
         font-size: 0.85rem; 
         padding: 12px 10px;
     }
-
     h2, p {
         word-break: break-all;
         font-size: 0.9rem;
@@ -257,21 +237,17 @@
          <div class="seccion-final">
     <details>
         <summary class="texto-clic">CRÉDITOS Y COLABORADORES</summary>
-        
         <div class="cuadro-desplegable">
-            
             <p class="titulo-mini">DESARROLLADO POR:</p>
             <div class="fila-botones">
                 <a href="https://www.instagram.com/the_cursed_programmer90?igsh=dm10enZmMDc3b3Vt" target="_blank" class="btn-estetico">@t_c_p90</a>
             </div>
-
             <p class="titulo-mini">COLABORADORES:</p>
             <div class="fila-botones">
                 <a href="https://www.instagram.com/1r1afael?igsh=NThnbHU0aWtnaDNh" target="_blank" class="btn-estetico">@1r1afael</a>
                 <a href="https://www.instagram.com/ma_userpunk?igsh=MW1weWJpcG45dzB0eg==" target="_blank" class="btn-estetico">@ma_userpun</a>
                 <a href="creditos.html" target="_blank" class="btn-estetico">Ver más</a>
             </div>
-
             <div class="info-legal">
                 <hr class="linea-roja">
                 <p>
@@ -307,6 +283,5 @@
     }
   });
 </script>
-
     </body>
 </html>         

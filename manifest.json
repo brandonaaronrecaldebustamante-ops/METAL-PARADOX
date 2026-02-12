@@ -1,6 +1,6 @@
 {
   "name": " METAL-PARADOX",
-  "short_name": "RockApp",
+  "short_name": "paradox",
   "description": "Explora playlists de las mejores bandas de rock.",
   "start_url": "./index.html",
   "display": "standalone",
@@ -8,12 +8,12 @@
   "theme_color": "#ff5555",
   "icons": [
     {
-      "src": "loguito.ico",
+      "src": "goty.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "loguito.ico",
+      "src": "goty.png",
       "sizes": "192x192 512x512",
       "type": "image/x-icon",
       "purpose": "any"

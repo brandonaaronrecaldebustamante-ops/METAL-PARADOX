@@ -7,10 +7,8 @@
       <link rel="icon" href="loguo.ico" type="image/x-icon">
       <title>METALCORE</title>
      <style>
-      /* Esto no afecta a la PC, solo a móviles */
 @media (max-width: 768px) {
     
-    /* 1. Ajustar el ancho de los contenedores principales */
     .tu-contenedor-principal, .container, section {
         width: 100% !important;
         padding-left: 15px;
@@ -18,18 +16,15 @@
         box-sizing: border-box;
     }
 
-    /* 2. Si usas Flexbox para columnas, apílalas verticalmente */
     .tu-fila-o-flex {
         flex-direction: column !important;
     }
 
-    /* 3. Ajustar imágenes para que no se salgan de la pantalla */
     img {
         max-width: 100%;
         height: auto;
     }
 
-    /* 4. Ajustar tamaños de letra si son muy grandes */
     h1 {
         font-size: 1.8rem !important;
     }
@@ -41,7 +36,7 @@
          justify-content: center;
          background: url(fondo.jpg) center center;
          background-size: cover;
-         overflow-x: hidden; /* evita desplazamiento lateral */
+         overflow-x: hidden; 
          font-family: 'Courier New', monospace;
         } 
        .bounce {
@@ -63,7 +58,7 @@
         }
         .boton-redireccion {
           display: inline-block;
-          margin: 15px auto;          /* centra el botón horizontalmente */
+          margin: 15px auto;
           padding: 12px 24px;
           background-color: #0b0b0b;
           color: #ff5555;
@@ -81,11 +76,11 @@
           box-shadow: 0 0 10px rgba(255, 85, 85, 0.6);
         }
         .contenedor {
-  position: relative;
-  z-index: 10; /* por encima de las guitarras */
-  text-align: center;
-  padding-top: 80px;
-}
+         position: relative;
+         z-index: 10;
+         text-align: center;
+         padding-top: 80px;
+        }
      </style>
    </head>
    <body>
@@ -115,9 +110,8 @@
       <img src="g15.png" alt="gif" class="imagen-interna" id="g1">
     </div>
                                 <script>
-  // Crear el objeto de audio
   const audio = new Audio("audio/u.mp3");
-  audio.volume = 0.6; // volumen 0 a 1 (ajústalo si quieres)
+  audio.volume = 0.6; 
 
   const casette = document.getElementById("g1");
 

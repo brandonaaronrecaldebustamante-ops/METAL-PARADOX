@@ -1,4 +1,4 @@
-const nombreCache = 'rock-psico-v2'; 
+const nombreCache = 'Metal-Paradox-v3'; 
 const archivosCache = [
   './',
   './index.html',
@@ -24,9 +24,8 @@ const archivosCache = [
     './demo.html',
     './estilo.css',
     './manifest.json',
-  './loguito.ico' // <--- Cambiado aquí
+    './goty.png' 
 ];
-// Instalar y forzar la entrada
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(nombreCache).then(cache => {
@@ -35,7 +34,6 @@ self.addEventListener('install', e => {
   );
 });
 
-// Activar y reclamar control de las pestañas abiertas
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys => {
@@ -48,7 +46,6 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Estrategia de respuesta
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(res => {
